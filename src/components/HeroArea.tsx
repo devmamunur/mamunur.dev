@@ -14,7 +14,7 @@ const HeroArea: React.FC = () => {
                             <h1 className="mb-1 text-5xl font-bold text-gray-900 mb-3 uppercase dark:text-white">Mamunur Rashid</h1>
                             <h6 className="text-2xl mb-3 text-gray-100 dark:text-gray-200">Software Developer</h6>
                             <p className="text-1xl text-gray-100 dark:text-gray-200">
-                                Full Stack Web Developer | JavaScript, TypeScript, Node.js | React.js, Vue.js | Open Source Enthusiast | 4 years of industry experience.
+                                Full Stack Web Developer | Open Source Enthusiast | JavaScript, TypeScript, Node.js, React.js, Vue.js | 4 years of industry experience.
                             </p>
                             <div className="flex mt-4 space-x-3 md:mt-4">
                                 <a href="#"
