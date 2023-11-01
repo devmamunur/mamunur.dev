@@ -1,13 +1,31 @@
 import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
 
 const ContributeCard : React.FC = () => {
     return (
         <>
-            <div className="col-span-2 bg-white py-6 px-6 rounded-2xl dark:bg-gray-800">
-                <div className="text-center md:text-left">
-                    <h6 className="text-2xl mb-3 text-gray-50000 font-bold dark:text-gray-200">@devmamunur</h6>
-                    <h6 className="text-1xl mb-1 text-gray-100 dark:text-gray-200">Want To Know More</h6>
-                    <h6 className="text-2xl text-gray-100 font-bold uppercase dark:text-gray-200">Opensource Contribution</h6>
+            <div className="col-span-2 section-card-wrapper">
+                <div className="bg-gradient-overlay"></div>
+                <Image
+                    className="image-overlay"
+                    src='/bg1.png'
+                    width='100'
+                    height='100'
+                    priority
+                    alt='read more'
+                />
+                <div className="group section-card">
+                    <div className="flex justify-between">
+                        <div>
+                            <h6 className="section-card-sub-title">Projects I Contribute</h6>
+                            <h4 className="mb-7 section-card-title">Opensource Contribution</h4>
+                        </div>
+                        <Link href="#" className="opacity-50 group-hover:opacity-100 transition-opacity duration-200 ease-linear">
+                            <Image src='/icon.svg' width='40' height='40' priority alt='read more'/>
+                        </Link>
+                    </div>
+                    <h6 className="text-1xl font-bold text-sky-500">BioDrop</h6>
                 </div>
             </div>
         </>
