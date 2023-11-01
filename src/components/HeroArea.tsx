@@ -2,15 +2,31 @@ import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import {faGit, faGithub, faLinkedinIn, faTwitter} from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 const HeroArea: React.FC = () => {
     return (
         <>
             <div className="">
                 <div className="mx-auto max-w-screen-xl">
-                    <div className="md:flex items-center w-full bg-white py-6 px-6 rounded-2xl mt-6 dark:bg-gray-800">
-                        <img className="h-72 w-72 rounded-2xl  mx-auto md:mx-0 md:mr-10"
-                             src="https://avatars.githubusercontent.com/u/49125977?v=4" alt="Bonnie image"/>
-                        <div className="text-center md:text-left">
+                    <div className="md:flex items-center w-full bg-white py-6 px-6 rounded-2xl mt-6 dark:bg-gray-900 relative">
+                        <div className="bg-gradient-overlay"></div>
+                        <Image
+                            className="image-overlay"
+                            src='/bg1.png'
+                            width='800'
+                            height='400'
+                            priority
+                            alt='read more'
+                        />
+                        <Image
+                            className="relative z-10 h-72 w-72 rounded-2xl  mx-auto md:mx-0 md:mr-10"
+                            src="/me.jpeg"
+                            width='300'
+                            height='300'
+                            priority
+                            alt="devmamunur"
+                        />
+                        <div  className="relative z-10 text-center md:text-left">
                             <h1 className="mb-1 text-5xl font-bold text-gray-900 mb-3 uppercase dark:text-white">Mamunur Rashid</h1>
                             <h6 className="text-2xl mb-3 text-gray-100 dark:text-gray-200">Software Developer</h6>
                             <p className="text-1xl text-gray-100 dark:text-gray-200">
