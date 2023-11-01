@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, {useEffect, useState} from 'react';
 import AboutCard from "@/components/About/AboutCard";
 import OpensourceCard from "@/components/Opensource/OpensourceCard";
 import ContributeCard from "@/components/Opensource/ContributeCard";
