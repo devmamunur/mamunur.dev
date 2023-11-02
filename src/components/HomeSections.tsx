@@ -8,6 +8,8 @@ import TestimonialCard from "@/components/Testimonial/TestimonialCard";
 import StatisticCard from "@/components/Statistic/StatisticCard";
 import BlogCard from "@/components/Blog/BlogCard";
 import ContactCard from "@/components/Contact/ContactCard";
+import PremiumProduct from "@/components/Product/PremiumProduct";
+import GuestNote from "@/components/Guest/GuestNote";
 
 const HomeSections : React.FC = () => {
     return (
@@ -17,9 +19,11 @@ const HomeSections : React.FC = () => {
                 <OpensourceCard/>
                 <ContributeCard/>
                 <ExperienceCard/>
-                <TestimonialCard/>
+                <PremiumProduct/>
                 <StatisticCard/>
+                <TestimonialCard/>
                 <BlogCard/>
+                <GuestNote/>
                 <ContactCard/>
             </div>
         </>
