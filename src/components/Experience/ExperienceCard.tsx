@@ -6,15 +6,6 @@ const ExperienceCard : React.FC = () => {
     return (
         <>
             <div className="col-span-1 section-card-wrapper">
-                <div className="bg-gradient-overlay"></div>
-                <Image
-                    className="image-overlay"
-                    src='/bg1.png'
-                    width='100'
-                    height='100'
-                    priority
-                    alt='read more'
-                />
                 <div className="group section-card">
                     <div className="flex justify-between">
                         <div>
