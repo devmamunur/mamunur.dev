@@ -1,25 +1,17 @@
 import React from 'react';
 import Image from "next/image";
+import Link from "next/link";
 
 const NavBar : React.FC = () => {
     return (
         <>
             <nav className="max-w-screen-xl mx-auto mt-6">
-                <div className=" flex flex-wrap items-center justify-between  p-4  border-gray-200 rounded-lg dark:bg-gray-900 relative">
-                    <div className="bg-gradient-overlay"></div>
-                    <Image
-                        className="image-overlay"
-                        src='/bg1.png'
-                        width='100'
-                        height='100'
-                        priority
-                        alt='read more'
-                    />
-                    <a href="https://flowbite.com/" className="relative z-10 flex items-center">
+                <div className=" flex flex-wrap items-center justify-between  p-4  border-gray-200 rounded-lg dark:bg-slate-800 relative">
+                    <Link href={`/`} className="flex items-center">
                         <span
                             className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">@devmamunur</span>
-                    </a>
-                    <div className="relative z-10 flex md:order-2">
+                    </Link>
+                    <div className="flex md:order-2">
                         <button type="button"
                                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get
                             started
@@ -31,7 +23,7 @@ const NavBar : React.FC = () => {
 
                         </button>
                     </div>
-                    <div className="relative z-10 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                         <ul className="flex flex-col font-medium p-4 md:p-0 mt-4  bg-transparent rounded-lg  md:flex-row md:space-x-8 md:mt-0 ">
                             <li>
                                 <a href="#"
