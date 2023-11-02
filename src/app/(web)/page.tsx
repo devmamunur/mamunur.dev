@@ -4,13 +4,11 @@ import HeroArea from "@/components/HeroArea";
 import HomeSections from "@/components/HomeSections";
 import Footer from "@/components/Footer";
 
-const HomePage : React.FC = () => {
+const HomePage: React.FC = () => {
     return (
         <>
-            <NavBar/>
             <HeroArea/>
             <HomeSections/>
-            <Footer/>
         </>
     );
 };
