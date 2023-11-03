@@ -9,7 +9,7 @@ const PremiumProduct : React.FC = () => {
                 <div className="group section-card">
                     <div className="flex justify-between">
                         <div>
-                            <h6 className="section-card-sub-title">I'm author at Envato</h6>
+                            <h6 className="section-card-sub-title">I&apos;m author at Envato</h6>
                             <h6 className="mb-7 section-card-title">Premium Product</h6>
                         </div>
                         <Link href="#" className="opacity-50 group-hover:opacity-100 transition-opacity duration-200 ease-linear">
