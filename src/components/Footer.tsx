@@ -10,7 +10,6 @@ const Footer: React.FC = () => {
                     <span className=" text-md text-gray-500 sm:text-center dark:text-gray-400">© 2023 <span
                         className="text-blue-500">@devmamunur</span>. All Rights Reserved.
                     </span>
-
                 </footer>
             </div>
         </>

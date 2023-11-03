@@ -8,6 +8,8 @@ const envSchema = z.object({
     GITHUB_USERNAME : z.string().optional(),
     GITHUB_ID : z.string().optional(),
     GITHUB_SECRET : z.string().optional(),
+    ADMIN_EMAIL : z.string().optional(),
+    ADMIN_PASSWORD : z.string().optional(),
 });
 
 const serverEnvCheck = envSchema.safeParse(process.env);
