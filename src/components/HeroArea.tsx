@@ -11,7 +11,7 @@ const HeroArea: React.FC = () => {
     <>
       <div className="">
         <div className="mx-auto max-w-screen-xl">
-          <div className="md:flex items-center w-full bg-white py-6 px-6 rounded-2xl mt-6 dark:bg-slate-800 relative">
+          <div className="md:flex items-center w-full py-6 px-6 rounded-2xl mt-6 dark:bg-slate-800 relative">
             <Image
               className=" h-72 w-72 rounded-2xl  mx-auto md:mx-0 md:mr-10"
               src="/me.jpeg"
