@@ -5,7 +5,7 @@ const getGitHubRepo = async (): Promise<any> => {
   const ghAuth = serverEnv.GITHUB_API_TOKEN
     ? {
         headers: {
-          Authorization: `bearer ${serverEnv.GITHUB_API_TOKEN}`,
+          Authorization: `bearer ${serverEnv.GITHUB_PERSONAL_ACCESS_TOKEN}`,
         },
       }
     : {};
@@ -13,8 +13,7 @@ const getGitHubRepo = async (): Promise<any> => {
   let data: Response | undefined;
   try {
     data = await fetch(
-      `https://api.github.com/users/${serverEnv.GITHUB_USERNAME}/repos`,
-      ghAuth
+      `https://api.github.com/users/${serverEnv.GITHUB_USERNAME}/repos?type=owner`
     );
     repo = await data.json();
     return repo;
