@@ -1,12 +1,11 @@
 import React from 'react';
 
-
-const OspPage : React.FC = () => {
-    return (
-        <>
-            <h1>Opensourse</h1>
-        </>
-    );
+const OpensourceProjectsPage: React.FC = () => {
+  return (
+    <>
+      <h1>Op project</h1>
+    </>
+  );
 };
 
-export default OspPage;
+export default OpensourceProjectsPage;
