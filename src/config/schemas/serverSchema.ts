@@ -5,6 +5,8 @@ const envSchema = z.object({
   NODE_ENV: z
     .enum(['development', 'production', 'test'])
     .default('development'),
+  DEVMAMUNUR_MONGO_CONNECTION_STRING: z.string().min(10),
+  GITHUB_PERSONAL_ACCESS_TOKEN: z.string().optional(),
   NEXTAUTH_SECRET: z.string().optional(),
   GITHUB_USERNAME: z.string().optional(),
   GITHUB_ID: z.string().optional(),
