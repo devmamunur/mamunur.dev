@@ -1,6 +1,6 @@
 import React from 'react';
-import HeroArea from '@/components/HeroArea';
-import HomeSections from '@/components/HomeSections';
+import HeroArea from '@/components/Web/HeroArea';
+import HomeSections from '@/components/Web/HomeSections';
 
 const HomePage: React.FC = () => {
   return (
