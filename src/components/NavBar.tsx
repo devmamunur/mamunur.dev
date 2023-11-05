@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodeFork } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const NavBar: React.FC = () => {
   return (
@@ -14,18 +15,18 @@ const NavBar: React.FC = () => {
             </span>
           </Link>
           <div className="flex md:order-2">
-            <Link href={`https://github.com/devmamunur/mamunur.dev/fork`}>
+            <Link href={`https://github.com/devmamunur/mamunur.dev`}>
               <button
                 type="button"
-                className="text-gray-900 bg-transparent border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                className="text-gray-900 bg-transparent border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 mr-2 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
               >
-                <FontAwesomeIcon icon={faCodeFork} /> Fork
+                <FontAwesomeIcon icon={faGithub} /> Code
               </button>
             </Link>
             <button
               data-collapse-toggle="navbar-cta"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden  focus:outline-none focus:ring-2  dark:text-white-400 dark:hover:bg-red-700 dark:focus:ring-red-600"
               aria-controls="navbar-cta"
               aria-expanded="false"
             >
