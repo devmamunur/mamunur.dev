@@ -34,19 +34,19 @@ const HeroArea: React.FC = () => {
               </p>
               <div className="flex mt-4 space-x-3 md:mt-4">
                 <a
-                  href="#"
+                  href="src/components#"
                   className="inline-flex items-center justify-center h-10 w-10  text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
                 >
                   <FontAwesomeIcon icon={faLinkedinIn} />
                 </a>
                 <a
-                  href="#"
+                  href="src/components#"
                   className="inline-flex items-center justify-center h-10 w-10  text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
                 <a
-                  href="#"
+                  href="src/components#"
                   className="inline-flex items-center justify-center h-10 w-10  text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-full hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700"
                 >
                   <FontAwesomeIcon icon={faTwitter} />
@@ -54,7 +54,7 @@ const HeroArea: React.FC = () => {
               </div>
               <div className="flex mt-4 space-x-3 md:mt-4">
                 <a
-                  href=""
+                  href="src/components"
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Download CV
