@@ -35,7 +35,7 @@ const SignIn: React.FC = () => {
       });
       if (result!.ok) {
         ToastHelper.success('Successfully signin');
-        router.push('/');
+        router.push('/dashboard/home');
       } else {
         ToastHelper.error("Credentials doesn't match");
       }
