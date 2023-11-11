@@ -32,3 +32,5 @@ const connectMongo = async (): Promise<typeof mongoose | null> => {
     throw error;
   }
 };
+
+export default connectMongo;
