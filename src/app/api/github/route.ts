@@ -1,18 +1,20 @@
 import { NextResponse } from 'next/server';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { getRepoApi } from '@/services/backend/github/getRepoApi';
+import { addGitHubRepo } from '@/services/backend/github/addGitHubRepo';
 import { serverEnv } from '@/config/schemas/serverSchema';
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request) {
   try {
-    const context = { req, res };
+    const reqBody = await req.json();
+    const repo = await addGitHubRepo(
+      req,
+      serverEnv.GITHUB_USERNAME,
+      reqBody.url
+    );
 
-    //  const repo = await getRepoApi(context, serverEnv.GITHUB_USERNAME, req.body);
-
-    return NextResponse.json({ success: true, data: req }, { status: 200 });
-  } catch (error: any) {
+    return NextResponse.json({ success: true, data: repo }, { status: 200 });
+  } catch (error) {
     return NextResponse.json(
-      { success: false, data: error.message },
+      { success: false, data: (error as Error).message },
       { status: 500 }
     );
   }
