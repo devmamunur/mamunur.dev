@@ -1,18 +1,19 @@
 import connectMongo from '@/config/mongo';
 import logger from '@/config/logger';
+import RepoModel from '@/models/Repo';
 
 export const getRepoApi = async (
-  context: any,
-  username: any,
-  addRepo: any
-): Promise<any> => {
+  context: Request,
+  username: string,
+  addRepo: string
+) => {
   await connectMongo();
   const log = logger.child({ username });
-  let getRepo = {};
+  const getRepo = {};
 
-  const repoUrl = addRepo.url.endsWith('/')
-    ? addRepo.url.slice(0, -1)
-    : addRepo.url;
+  const repoUrl = addRepo.endsWith('/') ? addRepo.slice(0, -1) : addRepo;
+
+  const repo = await RepoModel.findOne({ url: repoUrl });
 
   return repoUrl;
 };
