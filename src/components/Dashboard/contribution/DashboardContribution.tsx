@@ -19,7 +19,7 @@ const DashboardContribution = () => {
       });
 
       const output = await res.json();
-
+      console.log('final output is : ', output);
       if (output) {
         setLoader(false);
         setOutput(output);
@@ -48,10 +48,8 @@ const DashboardContribution = () => {
               <button className="bg-amber-500 t text-white px-4 py-2 rounded-2xl mt-3">
                 {loader ? 'loading...' : 'Add Repo'}
               </button>
-
-              <div className="text-white mt-6">
-                <pre>{JSON.stringify(output)}</pre>
-              </div>
+              <pre>{output}</pre>
+              <div className="text-white mt-6"></div>
             </form>
           </div>
         </div>
