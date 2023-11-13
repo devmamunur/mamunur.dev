@@ -1,54 +1,56 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Model, Schema } from 'mongoose';
+import { GitHubRepoData } from '@/interface/opensource';
 
-const RepoSchema = new Schema(
-  {
-    url: {
-      type: String,
-      required: true,
-      min: 2,
-      max: 256,
-    },
-    name: {
-      type: String,
-      required: true,
-      min: 2,
-      max: 256,
-    },
-    fullName: {
-      type: String,
-      required: true,
-      min: 2,
-      max: 256,
-    },
-    owner: {
-      type: String,
-      required: true,
-      min: 2,
-      max: 256,
-    },
-    description: {
-      type: String,
-      required: false,
-      min: 2,
-      max: 256,
-    },
-    stats: {
-      forks: Number,
-      stars: Number,
-      issues: Number,
-      subscribers: Number,
-      watchers: Number,
-    },
-    topics: [],
-    dates: {
-      createdAt: Date,
-      updatedAt: Date,
-      pushedAt: Date,
-    },
-    updatedAt: Date,
+const RepoSchema: Schema<GitHubRepoData> = new Schema({
+  url: {
+    type: String,
+    required: true,
+    min: 2,
+    max: 256,
   },
-  { versionKey: false }
-);
+  name: {
+    type: String,
+    required: true,
+    min: 2,
+    max: 256,
+  },
+  fullName: {
+    type: String,
+    required: true,
+    min: 2,
+    max: 256,
+  },
+  owner: {
+    type: String,
+    required: true,
+    min: 2,
+    max: 256,
+  },
+  description: {
+    type: String,
+    required: false,
+    min: 2,
+    max: 256,
+  },
+  stats: {
+    forks: Number,
+    stars: Number,
+    issues: Number,
+    subscribers: Number,
+    watchers: Number,
+  },
+  topics: {
+    type: [String],
+    default: [],
+  },
+  dates: {
+    createdAt: Date,
+    updatedAt: Date,
+    pushedAt: Date,
+  },
+  updatedAt: Date,
+});
 
-const RepoModel = mongoose.model('repos', RepoSchema);
+const RepoModel: Model<GitHubRepoData> =
+  mongoose.models.repos || mongoose.model<GitHubRepoData>('repos', RepoSchema);
 export default RepoModel;
