@@ -3,23 +3,29 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { clientEnv } from '@/config/schemas/clientSchema';
 
 const DashboardContribution = () => {
-  const [output, setOutput] = useState<any>('');
+  const [loader, setLoader] = useState<boolean>(false);
+  const [output, setOutput] = useState<string>('');
   const [url, setURL] = useState<string>('');
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    try {
+      setLoader(true);
+      const res = await fetch(`${clientEnv.NEXT_PUBLIC_BASE_URL}/api/github`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url }),
+      });
 
-    const res = await fetch(`${clientEnv.NEXT_PUBLIC_BASE_URL}/api/github`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ url }),
-    });
+      const output = await res.json();
 
-    const output: any = await res.json();
-
-    if (output) {
-      setOutput(output);
+      if (output) {
+        setLoader(false);
+        setOutput(output);
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
   return (
@@ -40,7 +46,7 @@ const DashboardContribution = () => {
                 className="w-full p-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
               />
               <button className="bg-amber-500 t text-white px-4 py-2 rounded-2xl mt-3">
-                Add Repo
+                {loader ? 'loading...' : 'Add Repo'}
               </button>
 
               <div className="text-white mt-6">
