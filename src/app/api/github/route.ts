@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   } catch (error) {
     return NextResponse.json(
       { success: false, data: (error as Error).message },
-      { status: 500 }
+      { status: 400 }
     );
   }
 }
@@ -28,7 +28,7 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json(
       { success: false, data: (error as Error).message },
-      { status: 500 }
+      { status: 400 }
     );
   }
 }
