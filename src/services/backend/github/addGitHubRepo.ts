@@ -19,22 +19,19 @@ export const addGitHubRepo = async (
   const repo = await RepoModel.findOne({ url: repoUrl });
 
   if (repo) {
-    const error = `repo already exists for: ${repoUrl}`;
-    log.error(error);
-    return { error };
+    const error = 'Repo already exists';
+    throw new Error(error);
   }
 
   let repoData: SetRepoData;
   try {
     repoData = await getGitHubRepo(repoUrl);
   } catch (e) {
-    const error = `failed to get data for repo: ${repoUrl}`;
+    const error = 'Failed to get data';
     log.error(e, error);
-    return { error };
+    throw new Error(error);
   }
-  if (repoData.error) {
-    return { error: repoData.error.message };
-  }
+
   const id = new mongoose.Types.ObjectId();
   try {
     await RepoModel.create({
@@ -61,9 +58,9 @@ export const addGitHubRepo = async (
     });
     getRepo = await RepoModel.findById(id);
   } catch (e) {
-    const error = `failed to add repo for username: ${username}`;
+    const error = 'Failed to add repo';
     log.error(e, error);
-    return { error };
+    throw new Error(error);
   }
   return JSON.parse(JSON.stringify(getRepo));
 };
