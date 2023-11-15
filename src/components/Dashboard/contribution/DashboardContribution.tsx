@@ -1,11 +1,27 @@
 'use client';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { clientEnv } from '@/config/schemas/clientSchema';
+import { SetRepoData } from '@/interface/opensource';
 
 const DashboardContribution = () => {
   const [loader, setLoader] = useState<boolean>(false);
   const [output, setOutput] = useState<string>('');
+  const [repos, setRepos] = useState<SetRepoData[]>([]);
   const [url, setURL] = useState<string>('');
+
+  const fetchData = async () => {
+    try {
+      const data = await fetch(`${clientEnv.NEXT_PUBLIC_BASE_URL}/api/github`);
+      const repos = await data.json();
+      setRepos(repos.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  useEffect(() => {
+    fetchData().then();
+  }, []);
+
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     try {
@@ -33,7 +49,6 @@ const DashboardContribution = () => {
       <div className="mx-auto max-w-screen-xl mt-6 grid grid-cols-1">
         <div className="col-span-1 section-card-wrapper">
           <div className="group section-card">
-            {clientEnv.NEXT_PUBLIC_BASE_URL}
             <span className="text-white"> DashboardContributions </span>
             <form className="mb-2" onSubmit={handleSubmit}>
               <input
@@ -49,7 +64,10 @@ const DashboardContribution = () => {
                 {loader ? 'loading...' : 'Add Repo'}
               </button>
               <pre>{output}</pre>
-              <div className="text-white mt-6"></div>
+              <div className="text-white mt-6">
+                {' '}
+                data : {JSON.stringify(repos)}
+              </div>
             </form>
           </div>
         </div>
