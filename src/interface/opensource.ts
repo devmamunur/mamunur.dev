@@ -12,12 +12,10 @@ export interface GitHubRepoData {
     watchers: number;
     subscribers: number;
   };
-  dates: {
-    createdAt: Date;
-    updatedAt: Date;
-    pushedAt: Date;
-  };
+  orderNum: number;
+  createdAt: Date;
   updatedAt: Date;
+  pushedAt: Date;
 }
 
 export interface SetRepoData {
