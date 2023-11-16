@@ -43,12 +43,19 @@ const RepoSchema: Schema<GitHubRepoData> = new Schema({
     type: [String],
     default: [],
   },
-  dates: {
-    createdAt: Date,
-    updatedAt: Date,
-    pushedAt: Date,
+  orderNum: {
+    type: Number,
+    default: 0,
   },
-  updatedAt: Date,
+  createdAt: {
+    type: Date,
+  },
+  updatedAt: {
+    type: Date,
+  },
+  pushedAt: {
+    type: Date,
+  },
 });
 
 const RepoModel: Model<GitHubRepoData> =
